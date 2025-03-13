@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JR Media - Sample Work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #121212;
+            --secondary-color: #2a2a2a;
+            --text-color: #f8f9fa;
+            --glass-bg: rgba(255, 255, 255, 0.07);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-color);
+            min-height: 100vh;
+            padding: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .background-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .shape:nth-child(1) {
+            width: 500px;
+            height: 500px;
+            top: -250px;
+            right: -100px;
+        }
+        
+        .shape:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            bottom: -150px;
+            left: -50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            opacity: 0.9;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .video-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: 1.5rem;
+        }
+        
+        .video-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .video-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--glass-bg);
+            color: var(--text-color);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .video-grid {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class="logo">JR Media</h1>
+        </header>
+        
+        <h2 class="subtitle">Sample Video Work</h2>
+        
+        <div class="video-grid">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <!-- Replace with your own Vimeo or YouTube embed URL -->
+                    <iframe src="https://player.vimeo.com/video/938961750" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Client Project 1</h3>
+                    <p class="video-desc">Captured this special milestone—a promotion celebration honoring my client’s sister—featuring heartfelt speeches, joyful moments, and a vibrant atmosphere.</p>
+                </div>
+            </div>
+            
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <!-- Replace with your own Vimeo or YouTube embed URL -->
+                    <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/vsj65kqjbf.js" async type="module"></script><style>wistia-player[media-id='vsj65kqjbf']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/vsj65kqjbf/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="vsj65kqjbf" aspect="1.7777777777777777"></wistia-player>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Client Project 2</h3>
+                    <p class="video-desc">Celebrating 30 years of love—capturing timeless moments before the big day.</p>
+                </div>
+            </div>
+            
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <!-- Replace with your own Vimeo or YouTube embed URL -->
+                    <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/8zs077l71c.js" async type="module"></script><style>wistia-player[media-id='8zs077l71c']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/8zs077l71c/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="8zs077l71c" aspect="1.7777777777777777"></wistia-player>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Client Project 3</h3>
+                    <p class="video-desc">Bringing craft and creativity to life—capturing the artistry and passion behind Type A, a local design and letterpress studio.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <a href="mailto:jreggy10@gmail.com" class="cta-button">Contact For Collaboration</a>
+        </div>
+        
+        <footer>
+            &copy; 2025 JR Media. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
